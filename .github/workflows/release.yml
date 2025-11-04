@@ -51,7 +51,7 @@ jobs:
       # Checkout your Git repo
       - uses: actions/checkout@v2
 
-      - uses: ok-nick/setup-aftman@v0.4.2
+      - uses: CompeyDev/setup-rokit@v0.1.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -117,10 +117,10 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-            node-version: latest
-            registry-url: https://registry.npmjs.org
-            cache: npm
-            cache-dependency-path: package-lock.json
+          node-version: latest
+          registry-url: https://registry.npmjs.org
+          cache: npm
+          cache-dependency-path: package-lock.json
 
       - name: install node packages
         run: sh scripts/npm-install.sh
@@ -131,4 +131,4 @@ jobs:
       - name: publish package
         run: npm publish --access public
         env:
-            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

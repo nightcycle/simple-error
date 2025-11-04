@@ -4,7 +4,6 @@ on:
   push:
 
 jobs:
-
   validate:
     runs-on: windows-latest
 
@@ -21,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: ok-nick/setup-aftman@v0.4.2
+      - uses: CompeyDev/setup-rokit@v0.1.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
